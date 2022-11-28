@@ -11,7 +11,6 @@ void op2(float *a_vec, int m, int n, int p, float *b_vec, float *c_vec)
 
     int val = 0;
     int i,j,k;
-    omp_set_num_threads(4);
     #pragma omp parallel for default(none) shared(m, n, p, a, b, c) private(i, k, j) reduction(+: val)
     for (k = 0; k < m; k++)
     {
