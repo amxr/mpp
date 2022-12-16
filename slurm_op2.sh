@@ -8,7 +8,7 @@ SRC=op2_omp.c
 MAIN=main_op2.c
 EXE=${SRC}.exe
 echo compiling $SRC to $EXE
-icc -std=c99 -qopenmp -O0 $SRC $MAIN -o $EXE && \
+icc -qopenmp -O0 $SRC $MAIN -o $EXE && \
 (
 for THREADS in 1 2 4 8 16 32
 do

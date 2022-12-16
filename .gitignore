@@ -1,2 +1,4 @@
 *.exe
 lab1/
+cmake-build-debug/
+CMakeLists.txt
