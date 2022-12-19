@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#define __USE_C99_MATH
 #include <stdbool.h>
 #include <omp.h>
 void op2(float *a_vec, int m, int n, int p, float *b_vec, float *c_vec)
