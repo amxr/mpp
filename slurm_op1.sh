@@ -12,14 +12,12 @@ icc -qopenmp -O3 -std=c99 -O0 $SRC $MAIN -o $EXE && \
 (
 for THREADS in 1 2 4 8 16 32
 do
-export OMP_NUM_THREADS=$THREADS # if '-c' not used then default to 1
+export OMP_NUM_THREADS=$THREADS
     echo using ${OMP_NUM_THREADS} OpenMP threads
     # run 5 times
-    time ./${EXE};echo
-    time ./${EXE};echo
-    time ./${EXE};echo
-    time ./${EXE};echo
-    time ./${EXE};echo
+    time ./${EXE} input.dat kernel.dat output.dat;echo
+    time ./${EXE} input.dat kernel.dat output.dat;echo
+    time ./${EXE} input.dat kernel.dat output.dat;echo
 done
 ) \
 || echo $SRC did not built to $EXE
